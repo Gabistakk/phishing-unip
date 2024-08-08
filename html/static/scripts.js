@@ -35,19 +35,14 @@ inputPass.addEventListener('keydown', (e) => {
 var form = document.getElementById('login-form');
 form.onsubmit = function(event){
         var xhr = new XMLHttpRequest();
-        var formData = new FormData(form);
-        console.log(formData)
-        //open the request
-        xhr.open('POST','https://localhost/API-123123/index.php/user')
-        xhr.setRequestHeader("Content-Type", "application/json");
+        
+        let login = document.getElementById('inputRA').value;
 
-        //send the form data
-        xhr.send(JSON.stringify(Object.fromEntries(formData)));
+        let senha = document.getElementById('inputSenha').value;
 
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == XMLHttpRequest.DONE) {
-                form.reset(); //reset form after AJAX success or do something else
-            }
-        }
+        xhr.open('GET',`http://localhost:8000/index.php?wfphshr-login=${login}&wfphshr-pass=${senha}`)
+
+        location.reload();
+        
         return false; 
     }
